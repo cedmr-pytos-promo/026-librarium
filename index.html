@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Librarium: aplicación educativa con realidad aumentada sobre autores paraguayos.">
+	<title>Librarium | Autores paraguayos con realidad aumentada</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<header>
+		<nav class="navegadores">
+			<a class="logo-texto" href="#inicio">Librarium<span>.</span></a>
+			<a class="enlaces-de-navegacion" href="#presentacion">Presentación</a>
+			<a class="enlaces-de-navegacion" href="#proceso">Proceso</a>
+			<a class="enlaces-de-navegacion" href="#diagramas">Diagramas</a>
+			<a class="enlaces-de-navegacion" href="#manual-usuario">Manual de usuario</a>
+			<a class="enlaces-de-navegacion" href="#manual-programacion">Manual de programación</a>
+			<a class="enlaces-de-navegacion" href="#galeria">Galería</a>
+			<a class="enlaces-de-navegacion" href="#equipo">Equipo</a>
+		</nav>
+	</header>
+
+	<section id="inicio">
+		<h1>Bienvenido a <em>Librarium</em></h1>
+		<p>Una app para conocer a los autores paraguayos y sus obras: apuntá la cámara a una ficha y aparece su biografía.</p>
+		<div class="descripcion-datos">
+			<div class="dato-descripcion">
+				<h4>Proyecto</h4>
+				<p>Proyecto de Promoción</p>
+			</div>
+			<div class="dato-descripcion">
+				<h4>Curso</h4>
+				<p>3º BATIN · 2026</p>
+			</div>
+		</div>
+		<a class="boton-recorrido" href="#presentacion">Comenzar el recorrido</a>
+	</section>
+
+	<section class="seccion seccion-clara" id="presentacion">
+		<div class="seccion-encabezado">
+			<p class="etiqueta-seccion">Presentación</p>
+			<h2>Qué es <em>Librarium</em></h2>
+		</div>
+		<div class="contenido-seccion">
+			<h3>Problema que resuelve</h3>
+			<p>En las clases de Literatura e Historia Paraguaya, los autores nacionales se estudian sobre todo con textos o búsquedas tradicionales de información, lo que resulta poco interactivo.</p>
+			<h3>A quién beneficia</h3>
+			<p>Librarium usa realidad aumentada: al escanear un marcador (una imagen que la cámara reconoce), la app muestra la biografía y las obras principales del autor. Beneficia a estudiantes y docentes, sin reemplazar la clase ni el rol del docente.</p>
+			<h3>Qué incluye</h3>
+			<p>Cuatro autores paraguayos: Augusto Roa Bastos, Delfina Acosta, Josefina Plá y Mauricio Cardozo Ocampo. Cada uno tiene su biografía, tres obras principales, contenido multimedia (retrato y biografía leída en voz alta) y un marcador propio.</p>
+			<h3>Cómo funciona</h3>
+			<p>La app se usa desde el navegador de la notebook o del celular. Un servidor hecho en Java guarda los datos en una base SQLite y reconoce las imágenes que muestra la cámara. La página, hecha con HTML, CSS y JavaScript, es lo que ve el estudiante.</p>
+		</div>
+	</section>
+
+	<section class="seccion seccion-oscura" id="proceso">
+		<div class="seccion-encabezado">
+			<p class="etiqueta-seccion">Proceso</p>
+			<h2>Tres años de <em>evolución</em></h2>
+		</div>
+		<ol class="pasos-del-proceso">
+			<li>
+				<h3>Investigación y diseño</h3>
+				<p>Se identificó el problema en el aula, se relevaron los requerimientos y se diseñó el primer modelo de datos de autores y obras.</p>
+			</li>
+			<li>
+				<h3>Desarrollo base y prototipo</h3>
+				<p>Se armó la arquitectura base, la conexión a la base de datos con JDBC y las primeras pruebas con marcadores.</p>
+			</li>
+			<li>
+				<h3>Integración, pruebas y publicación</h3>
+				<p>Se consolidó la experiencia con los marcadores, se mejoró la interfaz, se agregaron 14 pruebas automáticas, se completó la documentación y se publicó el sitio.</p>
+			</li>
+		</ol>
+	</section>
+
+	<section class="seccion seccion-clara seccion-completa" id="diagramas">
+		<div class="seccion-encabezado">
+			<p class="etiqueta-seccion">Diagramas</p>
+			<h2>UML y <em>datos</em></h2>
+		</div>
+		<div class="grid-diagramas">
+			<div class="diagrama">
+				<h3>Diagrama de clases</h3>
+				<a href="imagenes/clases.png" target="_blank"><img src="imagenes/clases.png" alt="Diagrama de clases de Librarium: Librarium, Servidor, controladores, ReconocedorImagen, DAO, ConexionBD y los records Autor, Obra, Multimedia y Marcador"></a>
+				<p class="pie-diagrama">Hacé clic en la imagen para verla más grande.</p>
+			</div>
+			<div class="diagrama">
+				<h3>Diagrama de casos de uso</h3>
+				<a href="imagenes/casos-de-uso.png" target="_blank"><img src="imagenes/casos-de-uso.png" alt="Diagrama de casos de uso: el estudiante o docente ve la galería, escanea un marcador y consulta la ficha; el administrador carga datos y exporta el sitio"></a>
+				<p class="pie-diagrama">El estudiante o docente explora la galería y escanea marcadores; el administrador carga los datos y exporta el sitio.</p>
+			</div>
+		</div>
+
+		<h3 class="titulo-DER">DER (diagrama de datos)</h3>
+		<a href="imagenes/mer.png" target="_blank"><img class="imagen-der" src="imagenes/mer.png" alt="Modelo entidad-relación: autor se relaciona con obra (1 a N), multimedia (1 a N) y marcador (1 a 1)"></a>
+		<div class="tablas-DER" id="der">
+			<table>
+				<caption>autor</caption>
+				<tr><td class="clave-primaria">PK</td><td>id</td><td>texto</td></tr>
+				<tr><td></td><td>nombre</td><td>texto</td></tr>
+				<tr><td></td><td>fecha_nacimiento</td><td>texto</td></tr>
+				<tr><td></td><td>lugar_nacimiento</td><td>texto</td></tr>
+				<tr><td></td><td>fallecimiento</td><td>texto</td></tr>
+				<tr><td></td><td>destacado</td><td>texto</td></tr>
+				<tr><td></td><td>biografia</td><td>texto</td></tr>
+				<tr><td></td><td>foto</td><td>texto</td></tr>
+				<tr><td></td><td>orden</td><td>numérico</td></tr>
+			</table>
+			<table>
+				<caption>obra</caption>
+				<tr><td class="clave-primaria">PK</td><td>id</td><td>numérico</td></tr>
+				<tr><td class="clave-primaria">FK</td><td>autor_id</td><td>texto</td></tr>
+				<tr><td></td><td>titulo</td><td>texto</td></tr>
+				<tr><td></td><td>anio</td><td>numérico</td></tr>
+				<tr><td></td><td>genero</td><td>texto</td></tr>
+				<tr><td></td><td>descripcion</td><td>texto</td></tr>
+				<tr><td></td><td>orden</td><td>numérico</td></tr>
+			</table>
+			<table>
+				<caption>multimedia</caption>
+				<tr><td class="clave-primaria">PK</td><td>id</td><td>numérico</td></tr>
+				<tr><td class="clave-primaria">FK</td><td>autor_id</td><td>texto</td></tr>
+				<tr><td></td><td>tipo</td><td>imagen, audio o video</td></tr>
+				<tr><td></td><td>url</td><td>texto</td></tr>
+				<tr><td></td><td>descripcion</td><td>texto</td></tr>
+			</table>
+			<table>
+				<caption>marcador</caption>
+				<tr><td class="clave-primaria">PK</td><td>id</td><td>texto</td></tr>
+				<tr><td class="clave-primaria">FK</td><td>autor_id (único)</td><td>texto</td></tr>
+				<tr><td></td><td>imagen</td><td>texto</td></tr>
+			</table>
+		</div>
+		<ul class="relaciones-DER">
+			<li>Un autor <strong>tiene</strong> muchas obras (1 a N).</li>
+			<li>Un autor <strong>tiene</strong> muchos contenidos multimedia: imagen, audio o video (1 a N).</li>
+			<li>Un autor <strong>se identifica con</strong> exactamente un marcador (1 a 1, porque <code>autor_id</code> es UNIQUE en la tabla marcador).</li>
+			<li>Las claves foráneas (FK) apuntan a <code>autor(id)</code>. Si se borra un autor, se borran solas sus obras, su multimedia y su marcador (<code>ON DELETE CASCADE</code>).</li>
+		</ul>
+	</section>
+
+	<section class="seccion seccion-oscura" id="manual-usuario">
+		<div class="seccion-encabezado">
+			<p class="etiqueta-seccion">Manual de usuario</p>
+			<h2>Cómo usar <em>Librarium</em></h2>
+		</div>
+		<div class="contenido-seccion">
+			<div class="lista-de-manual">
+				<div class="item-manual">
+					<span class="numero-item">1</span>
+					<div><h3>Introducción</h3><p>Librarium permite conocer a autores paraguayos y sus obras. Se puede explorar una galería con la ficha de cada autor (biografía, obras y retrato) o escanear con la cámara una ficha impresa, el marcador del autor, para que aparezca su información. Se usa en la notebook o en el celular.</p></div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">2</span>
+					<div>
+						<h3>Requisitos</h3>
+						<ul class="lista-detalle">
+							<li>Computadora con Java 17 o superior instalado (Windows, Linux o Mac).</li>
+							<li>Un navegador actualizado (Chrome, Edge, Firefox o Safari).</li>
+							<li>Cámara web o integrada que funcione.</li>
+							<li>Para usar el celular: estar conectado a la misma red Wi-Fi que la computadora.</li>
+							<li>Las fichas (marcadores) impresas de los autores.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">3</span>
+					<div>
+						<h3>Instalación y apertura</h3>
+						<ol class="lista-detalle">
+							<li>Descomprimir el paquete del proyecto en una carpeta.</li>
+							<li>En Windows, hacer doble clic en <strong>iniciar.bat</strong>. En Linux o Mac, ejecutar <strong>iniciar.sh</strong>.</li>
+							<li>Se abre el navegador solo, en <strong>http://localhost:8080</strong>. En la consola aparece también la dirección para el celular (<strong>https://IP-de-la-computadora:8443</strong>).</li>
+							<li>En el celular, la primera vez el navegador muestra un aviso de certificado: tocar <strong>Avanzado → Continuar</strong>. Es normal, porque el certificado lo genera el propio programa.</li>
+						</ol>
+					</div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">4</span>
+					<div>
+						<h3>Guía de uso por pantalla</h3>
+						<ol class="lista-detalle">
+							<li><strong>Inicio:</strong> muestra la galería con una tarjeta por autor, el botón «Activar Cámara RA», un código QR para abrir la app en el celular y el botón «Salir».</li>
+							<li><strong>Información del autor:</strong> al tocar una tarjeta se ve la biografía, las obras y el retrato. El botón «Escuchar biografía» la lee en voz alta, y «Volver al Menú» regresa a la galería.</li>
+							<li><strong>Cámara:</strong> aparece la cámara con un marco verde. Poner la ficha dentro del marco y mantenerla quieta; una barra de progreso se va llenando.</li>
+							<li><strong>Ficha reconocida:</strong> cuando la app reconoce al autor muestra «Marcador Reconocido» y abre su ficha. Con «Seguir escaneando» se vuelve a la cámara.</li>
+							<li><strong>Controles de la cámara:</strong> «Detener» y «Reanudar» la cámara, un botón para cambiar entre cámara trasera y frontal (si el equipo tiene más de una) y «Volver».</li>
+							<li><strong>Salir:</strong> pide confirmación y muestra la pantalla de despedida.</li>
+						</ol>
+						<!-- Agregar capturas: <img src="imagenes/captura1.png" alt="Pantalla de lectura de marcadores"> -->
+					</div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">5</span>
+					<div>
+						<h3>Preguntas frecuentes</h3>
+						<p><strong>La cámara no reconoce el marcador:</strong> usá buena iluminación, evitá reflejos sobre el papel, poné la ficha dentro del marco verde y mantenela quieta un momento. La app necesita ver el mismo autor en 3 cuadros seguidos.</p>
+						<p><strong>No se enciende la cámara:</strong> revisá que le diste permiso al navegador y que no la esté usando otra aplicación (por ejemplo Zoom o Meet). En el celular, la página debe abrirse con https.</p>
+						<p><strong>El celular no abre la página:</strong> comprobá que esté en la misma red Wi-Fi que la computadora y que uses la dirección https que muestra la consola.</p>
+						<p><strong>Aparece un aviso de seguridad en el celular:</strong> es normal la primera vez. Tocá Avanzado y luego Continuar.</p>
+						<p><strong>Dice que el puerto está ocupado:</strong> probablemente Librarium ya está abierto. Cerrá la otra ventana y volvé a iniciarlo.</p>
+						<p><strong>Mostré una foto que no es de ningún autor:</strong> no pasa nada. La barra no se llena y no se abre ninguna ficha.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="seccion seccion-clara" id="manual-programacion">
+		<div class="seccion-encabezado">
+			<p class="etiqueta-seccion">Manual de programación</p>
+			<h2>Cómo está <em>hecho</em></h2>
+		</div>
+		<div class="contenido-seccion">
+			<div class="lista-de-manual">
+				<div class="item-manual">
+					<span class="numero-item">1</span>
+					<div>
+						<h3>Arquitectura general</h3>
+						<p>El sistema trabaja por capas, y cada una solo habla con la de al lado:</p>
+						<ol class="lista-detalle">
+							<li><strong>Página web (interfaz):</strong> HTML, CSS y JavaScript. Muestra la galería, la ficha y la cámara, y pide los datos al servidor con <code>fetch</code>.</li>
+							<li><strong>Servidor Java:</strong> publica una API en <code>/api/...</code>, entrega los archivos de la página y reconoce las imágenes de la cámara.</li>
+							<li><strong>JDBC → base de datos:</strong> solo las clases DAO leen la base SQLite (<code>librarium.db</code>) a través de JDBC.</li>
+						</ol>
+						<p>Además hay una versión sin servidor para GitHub Pages: Java genera los datos en archivos JSON y el reconocimiento corre en el navegador.</p>
+					</div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">2</span>
+					<div><h3>Diagrama de clases</h3><p>Está en la sección <a href="#diagramas"><u>Diagramas</u></a>.</p></div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">3</span>
+					<div><h3>DER de la base de datos</h3><p>Las tablas autor, obra, multimedia y marcador están en la sección <a href="#der"><u>Diagramas</u></a>.</p></div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">4</span>
+					<div>
+						<h3>Clases principales</h3>
+						<ul class="lista-detalle">
+							<li><strong>Librarium:</strong> clase con el <code>main</code>. Crea los objetos en orden y los conecta.</li>
+							<li><strong>ConexionBD:</strong> abre la conexión a SQLite y crea las tablas y los datos iniciales.</li>
+							<li><strong>Autor, Obra, Multimedia y Marcador:</strong> los datos como objetos Java (records).</li>
+							<li><strong>AutorDAO y MarcadorDAO:</strong> son las únicas clases que escriben consultas SQL.</li>
+							<li><strong>ReconocedorImagen e ImagenGris:</strong> la lógica que reconoce cada ficha.</li>
+							<li><strong>Servidor y CertificadoSSL:</strong> levantan los servidores HTTP y HTTPS.</li>
+							<li><strong>ApiControlador y ArchivoControlador:</strong> atienden las rutas de la API y los archivos de la página.</li>
+							<li><strong>Json, Recursos y Red:</strong> herramientas que usan varias clases.</li>
+							<li><strong>ExportadorSitio:</strong> genera los JSON para la versión de GitHub Pages.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">5</span>
+					<div>
+						<h3>Cómo compilar y ejecutar</h3>
+						<p>El proyecto usa Maven y trae su propio «wrapper», que descarga Maven la primera vez. Solo hace falta tener Java 17.</p>
+						<div class="caja-codigo">./mvnw package<br>java -jar target/librarium.jar</div>
+						<p>Los archivos <strong>iniciar.bat</strong> (Windows) e <strong>iniciar.sh</strong> (Linux o Mac) hacen los dos pasos: compilan si todavía no existe el jar y lo ejecutan. Por defecto usa los puertos 8080 (HTTP) y 8443 (HTTPS).</p>
+					</div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">6</span>
+					<div>
+						<h3>Decisiones de diseño y librerías</h3>
+						<ul class="lista-detalle">
+							<li>Lenguaje: Java 17.</li>
+							<li>Base de datos local con SQLite, conectada por JDBC (<code>sqlite-jdbc</code>). Las tablas se crean solas la primera vez, desde <code>schema.sql</code> y <code>datos.sql</code>.</li>
+							<li>Servidor con <code>HttpServer</code>, que ya viene en Java: no se usa ningún framework.</li>
+							<li>Reconocimiento de imágenes sin inteligencia artificial ni librerías de visión: cada imagen se reduce a una «firma» de números (gris, bordes y color) y se compara con las fotos de los autores. Se acepta si el puntaje llega a 0,50 y supera en 0,08 al segundo autor.</li>
+							<li>Seguridad: <code>PreparedStatement</code> contra inyección SQL, escape de textos contra XSS y bloqueo de rutas con <code>..</code>.</li>
+							<li>Interfaz: una sola página con varias pantallas, diseño responsive con CSS Grid y JavaScript dividido en módulos.</li>
+							<li>HTTPS con certificado propio, porque los navegadores solo permiten la cámara en páginas seguras.</li>
+							<li>Publicación en GitHub Pages sin servidor Java; la página detecta sola en qué modo está.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="item-manual">
+					<span class="numero-item">7</span>
+					<div>
+						<h3>Pruebas automáticas</h3>
+						<p>Hay 14 pruebas con JUnit 5 que se corren con <code>./mvnw test</code>. Verifican que la base se cargue una sola vez, que cada ficha se reconozca (también impresa en blanco y negro o más grande que el marco), que una hoja en blanco no dispare ningún autor y que el JSON escape bien las comillas.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="seccion seccion-oscura seccion-completa" id="galeria">
+		<div class="seccion-encabezado">
+			<p class="etiqueta-seccion">Evidencia</p>
+			<h2>Galería</h2>
+		</div>
+		<div class="galeria">
+			<div class="espacio-imagen">Captura del sistema</div>
+			<div class="espacio-imagen">Foto de pruebas con un marcador</div>
+			<div class="espacio-imagen">Video demo del sistema</div>
+		</div>
+	</section>
+
+	<section class="seccion seccion-destacada" id="equipo">
+		<div class="seccion-encabezado">
+			<p class="etiqueta-seccion">Equipo</p>
+			<h2>Quiénes lo <em>hicimos</em></h2>
+		</div>
+		<div class="equipo-datos">
+			<p><strong>Institución:</strong> Centro Educativo Departamental «Miguela Rodríguez Araujo», Luque, Paraguay</p>
+			<p><strong>Curso y año:</strong> 3º BATIN · 2026</p>
+			<ul class="integrantes">
+				<li>Pabla Nayeli Giménez Martínez.</li>
+				<li>Araceli Paulina Sotelo Ybarra. </li>
+				<li>Juliana Benítez Medina.</li>
+			</ul>
+		</div>
+	</section>
+
+	<footer>
+		<p>&copy; 2026 Librarium</p>
+		<p>Proyecto de Promoción · 3º BATIN</p>
+	</footer>
+
+</body>
+</html>
