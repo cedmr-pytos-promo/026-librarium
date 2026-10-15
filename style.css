@@ -296,10 +296,29 @@ header{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 25px;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 .seccion-oscura .espacio-imagen{
     border-color: rgba(232,243,230,0.4);
+}
+.titulo-grupo{
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4em;
+    margin-top: 45px;
+}
+.galeria figure{
+    margin: 0;
+}
+.galeria img{
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid rgba(232,243,230,0.4);
+}
+.galeria figcaption{
+    font-size: 0.85em;
+    color: #e8e0d2;
+    margin-top: 8px;
 }
 .integrantes{
     list-style-type: none;
@@ -322,11 +341,17 @@ footer{
 
 /*RESPONSIVE---------------------------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 900px){
-    .seccion, .grid-diagramas, .tablas-DER, .galeria{
+    .seccion, .grid-diagramas, .tablas-DER{
         grid-template-columns: 1fr;
+    }
+    .galeria{
+        grid-template-columns: repeat(2,1fr);
     }
 }
 @media (max-width: 600px){
+    .galeria{
+        grid-template-columns: 1fr;
+    }
     #inicio h1{
         font-size: 2.3em;
     }

@@ -54,7 +54,7 @@
 			<h3>Qué incluye</h3>
 			<p>Cuatro autores paraguayos: Augusto Roa Bastos, Delfina Acosta, Josefina Plá y Mauricio Cardozo Ocampo. Cada uno tiene su biografía, tres obras principales, contenido multimedia (retrato y biografía leída en voz alta) y un marcador propio.</p>
 			<h3>Cómo funciona</h3>
-			<p>La app se usa desde el navegador de la notebook o del celular. Un servidor hecho en Java guarda los datos en una base SQLite y reconoce las imágenes que muestra la cámara. La página, hecha con HTML, CSS y JavaScript, es lo que ve el estudiante.</p>
+			<p>La app se usa desde el navegador de la notebook o del celular. Un servidor hecho en Java guarda los datos en una base SQLite y reconoce las imágenes que muestra la cámara. La página, hecha con HTML, CSS y JavaScript, es lo que ve el estudiante. Desde el celular, la app también muestra una escultura 3D del autor en el espacio real.</p>
 		</div>
 	</section>
 
@@ -87,13 +87,13 @@
 		<div class="grid-diagramas">
 			<div class="diagrama">
 				<h3>Diagrama de clases</h3>
-				<a href="imagenes/clases.png" target="_blank"><img src="imagenes/clases.png" alt="Diagrama de clases de Librarium: Librarium, Servidor, controladores, ReconocedorImagen, DAO, ConexionBD y los records Autor, Obra, Multimedia y Marcador"></a>
-				<p class="pie-diagrama">Hacé clic en la imagen para verla más grande.</p>
+				<a href="imagenes/clases.png" target="_blank"><img src="imagenes/clases.png" alt="Diagrama de clases del backend en Java 17, organizado por paquetes: servidor, controlador, servicio, dao, conexion, modelo y util"></a>
+				<p class="pie-diagrama">Cada color es un paquete (ver la leyenda del diagrama). Hacé clic en la imagen para verla más grande.</p>
 			</div>
 			<div class="diagrama">
 				<h3>Diagrama de casos de uso</h3>
-				<a href="imagenes/casos-de-uso.png" target="_blank"><img src="imagenes/casos-de-uso.png" alt="Diagrama de casos de uso: el estudiante o docente ve la galería, escanea un marcador y consulta la ficha; el administrador carga datos y exporta el sitio"></a>
-				<p class="pie-diagrama">El estudiante o docente explora la galería y escanea marcadores; el administrador carga los datos y exporta el sitio.</p>
+				<a href="imagenes/casos-de-uso.png" target="_blank"><img src="imagenes/casos-de-uso.png" alt="Diagrama de casos de uso: el estudiante ve la galería, la ficha y la escultura 3D y escanea fichas impresas; el desarrollador carga datos, genera modelos 3D y publica en GitHub Pages"></a>
+				<p class="pie-diagrama">El estudiante ve la galería, la ficha y la escultura 3D, y escanea fichas impresas; el desarrollador carga los datos, genera los modelos 3D y publica el sitio.</p>
 			</div>
 		</div>
 
@@ -117,9 +117,9 @@
 				<tr><td class="clave-primaria">PK</td><td>id</td><td>numérico</td></tr>
 				<tr><td class="clave-primaria">FK</td><td>autor_id</td><td>texto</td></tr>
 				<tr><td></td><td>titulo</td><td>texto</td></tr>
-				<tr><td></td><td>anio</td><td>numérico</td></tr>
+				<tr><td></td><td>anio</td><td>numérico (puede quedar vacío)</td></tr>
 				<tr><td></td><td>genero</td><td>texto</td></tr>
-				<tr><td></td><td>descripcion</td><td>texto</td></tr>
+				<tr><td></td><td>descripcion</td><td>texto (puede quedar vacío)</td></tr>
 				<tr><td></td><td>orden</td><td>numérico</td></tr>
 			</table>
 			<table>
@@ -127,7 +127,7 @@
 				<tr><td class="clave-primaria">PK</td><td>id</td><td>numérico</td></tr>
 				<tr><td class="clave-primaria">FK</td><td>autor_id</td><td>texto</td></tr>
 				<tr><td></td><td>tipo</td><td>imagen, audio o video</td></tr>
-				<tr><td></td><td>url</td><td>texto</td></tr>
+				<tr><td></td><td>url</td><td>texto (puede quedar vacío)</td></tr>
 				<tr><td></td><td>descripcion</td><td>texto</td></tr>
 			</table>
 			<table>
@@ -142,6 +142,7 @@
 			<li>Un autor <strong>tiene</strong> muchos contenidos multimedia: imagen, audio o video (1 a N).</li>
 			<li>Un autor <strong>se identifica con</strong> exactamente un marcador (1 a 1, porque <code>autor_id</code> es UNIQUE en la tabla marcador).</li>
 			<li>Las claves foráneas (FK) apuntan a <code>autor(id)</code>. Si se borra un autor, se borran solas sus obras, su multimedia y su marcador (<code>ON DELETE CASCADE</code>).</li>
+			<li>Pueden quedar vacíos (NULL): el año y la descripción de una obra, y la <code>url</code> de multimedia (por ejemplo, el audio de la biografía se genera con voz sintetizada).</li>
 		</ul>
 	</section>
 
@@ -154,7 +155,7 @@
 			<div class="lista-de-manual">
 				<div class="item-manual">
 					<span class="numero-item">1</span>
-					<div><h3>Introducción</h3><p>Librarium permite conocer a autores paraguayos y sus obras. Se puede explorar una galería con la ficha de cada autor (biografía, obras y retrato) o escanear con la cámara una ficha impresa, el marcador del autor, para que aparezca su información. Se usa en la notebook o en el celular.</p></div>
+					<div><h3>Introducción</h3><p>Librarium permite conocer a autores paraguayos y sus obras. Se puede explorar una galería con la ficha de cada autor (biografía, obras y retrato) o escanear con la cámara una ficha impresa, el marcador del autor, para que aparezca su información. Desde el celular también se puede colocar en el espacio real una escultura 3D del autor, con paneles de biografía y obras. Se usa en la notebook o en el celular.</p></div>
 				</div>
 				<div class="item-manual">
 					<span class="numero-item">2</span>
@@ -186,14 +187,14 @@
 					<div>
 						<h3>Guía de uso por pantalla</h3>
 						<ol class="lista-detalle">
-							<li><strong>Inicio:</strong> muestra la galería con una tarjeta por autor, el botón «Activar Cámara RA», un código QR para abrir la app en el celular y el botón «Salir».</li>
-							<li><strong>Información del autor:</strong> al tocar una tarjeta se ve la biografía, las obras y el retrato. El botón «Escuchar biografía» la lee en voz alta, y «Volver al Menú» regresa a la galería.</li>
-							<li><strong>Cámara:</strong> aparece la cámara con un marco verde. Poner la ficha dentro del marco y mantenerla quieta; una barra de progreso se va llenando.</li>
-							<li><strong>Ficha reconocida:</strong> cuando la app reconoce al autor muestra «Marcador Reconocido» y abre su ficha. Con «Seguir escaneando» se vuelve a la cámara.</li>
-							<li><strong>Controles de la cámara:</strong> «Detener» y «Reanudar» la cámara, un botón para cambiar entre cámara trasera y frontal (si el equipo tiene más de una) y «Volver».</li>
-							<li><strong>Salir:</strong> pide confirmación y muestra la pantalla de despedida.</li>
+							<li><strong>Bienvenida:</strong> muestra el nombre de la app y los retratos de los autores. Tocar «Comenzar».</li>
+							<li><strong>Menú:</strong> hay dos opciones, «Realidad Aumentada» (la escultura 3D de un autor en tu espacio, con la cámara del celular) y «Galería Digital» (las fichas de los autores y sus obras principales). También están el enlace «Imprimir fichas con las fotos», el botón «Salir» y, en la computadora, un código QR para abrir la app en el celular (misma red Wi-Fi).</li>
+							<li><strong>Galería Digital:</strong> una tarjeta por autor. Con «Ver Información» se abre su biografía, sus obras y su retrato. El botón «Escuchar biografía» la lee en voz alta.</li>
+							<li><strong>Realidad Aumentada:</strong> elegir un autor entre los botones de arriba y tocar «Ver en tu espacio». Apuntar la cámara al piso: aparece su escultura con dos paneles, uno con la biografía y otro con las obras principales. Se puede caminar alrededor, acercarse a leer y cambiarle el tamaño.</li>
+							<li><strong>Escanear ficha impresa:</strong> se enciende la cámara con un marco verde y una línea de escaneo. Poner la ficha impresa dentro del marco y mantenerla quieta; la barra de abajo se va llenando. Con «Detener Escaneo» se apaga la cámara y con «Volver al Menú» se regresa.</li>
+							<li><strong>Ficha reconocida:</strong> cuando la app reconoce al autor muestra «Marcador reconocido» y abre su ficha, con el botón «Ver en Realidad Aumentada». Con «Seguir escaneando» se vuelve a la cámara.</li>
 						</ol>
-						<!-- Agregar capturas: <img src="imagenes/captura1.png" alt="Pantalla de lectura de marcadores"> -->
+						<p>Las capturas de cada pantalla están en la sección <a href="#galeria"><u>Galería</u></a>.</p>
 					</div>
 				</div>
 				<div class="item-manual">
@@ -298,10 +299,95 @@
 			<p class="etiqueta-seccion">Evidencia</p>
 			<h2>Galería</h2>
 		</div>
+		<h3 class="titulo-grupo">Versión web en la computadora</h3>
 		<div class="galeria">
-			<div class="espacio-imagen">Captura del sistema</div>
-			<div class="espacio-imagen">Foto de pruebas con un marcador</div>
-			<div class="espacio-imagen">Video demo del sistema</div>
+			<figure>
+				<a href="imagenes/web-pc-bienvenida.jpg" target="_blank"><img src="imagenes/web-pc-bienvenida.jpg" alt="Pantalla de bienvenida de Librarium con los retratos de los cuatro autores y el botón Comenzar"></a>
+				<figcaption>Pantalla de bienvenida</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/web-pc-menu-qr.jpg" target="_blank"><img src="imagenes/web-pc-menu-qr.jpg" alt="Menú principal con las opciones Galería Digital y Realidad Aumentada y el código QR para abrir la app en el celular"></a>
+				<figcaption>Menú principal y código QR para el celular</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/web-pc-galeria.jpg" target="_blank"><img src="imagenes/web-pc-galeria.jpg" alt="Galería digital con las tarjetas de los cuatro autores y el botón Ver Información"></a>
+				<figcaption>Galería digital de autores</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/web-pc-camara.jpg" target="_blank"><img src="imagenes/web-pc-camara.jpg" alt="Pantalla de la cámara con el marco verde y la línea de escaneo"></a>
+				<figcaption>Cámara con marco verde para escanear la ficha</figcaption>
+			</figure>
+		</div>
+		<h3 class="titulo-grupo">Versión web en el celular</h3>
+		<div class="galeria">
+			<figure>
+				<a href="imagenes/web-cel-bienvenida.jpg" target="_blank"><img src="imagenes/web-cel-bienvenida.jpg" alt="Pantalla de bienvenida de Librarium en el celular"></a>
+				<figcaption>Pantalla de bienvenida en el celular</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/web-cel-menu.jpg" target="_blank"><img src="imagenes/web-cel-menu.jpg" alt="Menú principal en el celular con las opciones Realidad Aumentada y Galería Digital"></a>
+				<figcaption>Menú principal en el celular</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/web-cel-galeria.jpg" target="_blank"><img src="imagenes/web-cel-galeria.jpg" alt="Galería digital en el celular con las tarjetas de los cuatro autores"></a>
+				<figcaption>Galería digital en el celular (modo oscuro)</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/web-cel-marcador-reconocido.jpg" target="_blank"><img src="imagenes/web-cel-marcador-reconocido.jpg" alt="Ficha de Josefina Plá abierta después de reconocer su marcador"></a>
+				<figcaption>Marcador reconocido: se abre la ficha de Josefina Plá</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/web-cel-biografia-obras.jpg" target="_blank"><img src="imagenes/web-cel-biografia-obras.jpg" alt="Biografía y obras principales de Josefina Plá con el botón Escuchar biografía"></a>
+				<figcaption>Biografía y obras principales, con el botón «Escuchar biografía»</figcaption>
+			</figure>
+		</div>
+		<h3 class="titulo-grupo">Realidad aumentada con escultura 3D</h3>
+		<div class="galeria">
+			<figure>
+				<a href="imagenes/ra-elegir-autor-oscuro.jpg" target="_blank"><img src="imagenes/ra-elegir-autor-oscuro.jpg" alt="Pantalla de Realidad Aumentada con la escultura 3D de Roa Bastos y el botón Ver en tu espacio"></a>
+				<figcaption>Elegir un autor y tocar «Ver en tu espacio» (modo oscuro)</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/ra-elegir-autor-claro.jpg" target="_blank"><img src="imagenes/ra-elegir-autor-claro.jpg" alt="Pantalla de Realidad Aumentada en modo claro con los botones Escanear ficha impresa y Volver al Menú"></a>
+				<figcaption>Lo mismo en modo claro, con «Escanear ficha impresa» y «Volver al Menú»</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/ra-escultura-sala.jpg" target="_blank"><img src="imagenes/ra-escultura-sala.jpg" alt="Escultura 3D de Augusto Roa Bastos con dos paneles de biografía y obras, colocada en una sala real"></a>
+				<figcaption>La escultura de Roa Bastos con sus dos paneles, en una sala real</figcaption>
+			</figure>
+		</div>
+		<h3 class="titulo-grupo">Versiones anteriores del proyecto</h3>
+		<div class="galeria">
+			<figure>
+				<a href="imagenes/anterior-prototipo-web.jpg" target="_blank"><img src="imagenes/anterior-prototipo-web.jpg" alt="Prototipo web anterior con tarjetas de autores todavía sin fotos"></a>
+				<figcaption>Prototipo web anterior: tarjetas de autores sin fotos todavía</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/anterior-swing-galeria.jpg" target="_blank"><img src="imagenes/anterior-swing-galeria.jpg" alt="Versión anterior en Java Swing con la galería de autores y el botón Activar Camara RA"></a>
+				<figcaption>Versión anterior en Java Swing: galería y «Activar Camara RA»</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/anterior-swing-biografia.jpg" target="_blank"><img src="imagenes/anterior-swing-biografia.jpg" alt="Versión anterior en Java Swing con la biografía de Augusto Roa Bastos"></a>
+				<figcaption>Versión anterior en Java Swing: biografía de Roa Bastos</figcaption>
+			</figure>
+		</div>
+		<h3 class="titulo-grupo">Código de la versión anterior</h3>
+		<div class="galeria">
+			<figure>
+				<a href="imagenes/codigo-schema-sql.jpg" target="_blank"><img src="imagenes/codigo-schema-sql.jpg" alt="Archivo schema.sql con las tablas autor y obra de la versión anterior"></a>
+				<figcaption>schema.sql de la versión anterior: tablas autor y obra</figcaption>
+			</figure>
+			<figure>
+				<a href="imagenes/codigo-databasemanager.jpg" target="_blank"><img src="imagenes/codigo-databasemanager.jpg" alt="Clase DatabaseManager en Java junto a la ficha de Roa Bastos de la versión Swing"></a>
+				<figcaption>Clase DatabaseManager (Java) y la ficha de la versión Swing</figcaption>
+			</figure>
+		</div>
+		<h3 class="titulo-grupo">En el aula</h3>
+		<div class="galeria">
+			<figure>
+				<a href="imagenes/equipo-trabajando.jpg" target="_blank"><img src="imagenes/equipo-trabajando.jpg" alt="Dos estudiantes trabajando con una notebook en el aula"></a>
+				<figcaption>Trabajando en el proyecto en el aula</figcaption>
+			</figure>
 		</div>
 	</section>
 
