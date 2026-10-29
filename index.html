@@ -15,19 +15,25 @@
 	<header>
 		<nav class="navegadores">
 			<a class="logo-texto" href="#inicio">Librarium<span>.</span></a>
-			<a class="enlaces-de-navegacion" href="#presentacion">Presentación</a>
-			<a class="enlaces-de-navegacion" href="#proceso">Proceso</a>
-			<a class="enlaces-de-navegacion" href="#diagramas">Diagramas</a>
-			<a class="enlaces-de-navegacion" href="#manual-usuario">Manual de usuario</a>
-			<a class="enlaces-de-navegacion" href="#manual-programacion">Manual de programación</a>
-			<a class="enlaces-de-navegacion" href="#galeria">Galería</a>
-			<a class="enlaces-de-navegacion" href="#equipo">Equipo</a>
+			<input type="checkbox" id="menu-check" class="menu-check">
+			<label for="menu-check" class="boton-menu" title="Abrir o cerrar el menú">&#9776;</label>
+			<div class="enlaces">
+				<a class="enlaces-de-navegacion" href="#presentacion">Presentación</a>
+				<a class="enlaces-de-navegacion" href="#proceso">Proceso</a>
+				<a class="enlaces-de-navegacion" href="#cronograma">Cronograma</a>
+				<a class="enlaces-de-navegacion" href="#diagramas">Diagramas</a>
+				<a class="enlaces-de-navegacion" href="#manual-usuario">Manual de usuario</a>
+				<a class="enlaces-de-navegacion" href="#manual-programacion">Manual de programación</a>
+				<a class="enlaces-de-navegacion" href="#galeria">Galería</a>
+				<a class="enlaces-de-navegacion" href="#estado-final">Estado final</a>
+				<a class="enlaces-de-navegacion" href="#equipo">Equipo</a>
+			</div>
 		</nav>
 	</header>
 
 	<section id="inicio">
 		<h1>Bienvenido a <em>Librarium</em></h1>
-		<p>Una app para conocer a los autores paraguayos y sus obras: apuntá la cámara a una ficha y aparece su biografía.</p>
+		<p>Una app para conocer a los autores paraguayos y sus obras: apunta la cámara a una ficha y aparece su biografía.</p>
 		<div class="descripcion-datos">
 			<div class="dato-descripcion">
 				<h4>Proyecto</h4>
@@ -50,32 +56,54 @@
 			<h3>Problema que resuelve</h3>
 			<p>En las clases de Literatura e Historia Paraguaya, los autores nacionales se estudian sobre todo con textos o búsquedas tradicionales de información, lo que resulta poco interactivo.</p>
 			<h3>A quién beneficia</h3>
-			<p>Librarium usa realidad aumentada: al escanear un marcador (una imagen que la cámara reconoce), la app muestra la biografía y las obras principales del autor. Beneficia a estudiantes y docentes, sin reemplazar la clase ni el rol del docente.</p>
-			<h3>Qué incluye</h3>
+				<p>Este proyecto beneficia de manera directa a los estudiantes del nivel medio, a los docentes de literatura y a las instituciones educativas que buscan incorporar herramientas tecnológicas innovadoras, accesibles y dinámicas para modernizar, enriquecer y facilitar el estudio del patrimonio cultural e histórico del Paraguay. No reemplaza la clase ni el rol del docente.</p>
+				<h3>Qué incluye</h3>
 			<p>Cuatro autores paraguayos: Augusto Roa Bastos, Delfina Acosta, Josefina Plá y Mauricio Cardozo Ocampo. Cada uno tiene su biografía, tres obras principales, contenido multimedia (retrato y biografía leída en voz alta) y un marcador propio.</p>
 			<h3>Cómo funciona</h3>
-			<p>La app se usa desde el navegador de la notebook o del celular. Un servidor hecho en Java guarda los datos en una base SQLite y reconoce las imágenes que muestra la cámara. La página, hecha con HTML, CSS y JavaScript, es lo que ve el estudiante. Desde el celular, la app también muestra una escultura 3D del autor en el espacio real.</p>
+				<p>Librarium usa realidad aumentada: al escanear un marcador (una imagen que la cámara reconoce), la app muestra la biografía y las obras principales del autor.</p>
+				<p>Para utilizar la aplicación, apunta con la cámara de tu dispositivo o haz clic en las opciones disponibles dentro de la galería digital. Explora las fichas biográficas detalladas, escucha la lectura automatizada en voz alta y coloca el marcador físico frente al visor para activar la realidad aumentada en tres dimensiones. Mira cómo los elementos virtuales cobran vida directamente en tu propio entorno de estudio.</p>
+				<p>La app se usa desde el navegador de la notebook o del celular. Un servidor hecho en Java guarda los datos en una base SQLite y reconoce las imágenes que muestra la cámara. La página, hecha con HTML, CSS y JavaScript, es lo que ve el estudiante. Desde el celular, la app también muestra una escultura 3D del autor en el espacio real.</p>
 		</div>
 	</section>
 
 	<section class="seccion seccion-oscura" id="proceso">
 		<div class="seccion-encabezado">
 			<p class="etiqueta-seccion">Proceso</p>
-			<h2>Tres años de <em>evolución</em></h2>
+			<h2>Dos años de <em>evolución</em></h2>
+			<p class="intro-proceso">El proyecto de promoción duró dos ciclos académicos consecutivos: 2025 (2.º curso) y 2026 (3.er curso). Dividirlo en dos etapas permitió cuidar la calidad técnica, la investigación y la integración de la realidad aumentada.</p>
 		</div>
 		<ol class="pasos-del-proceso">
 			<li>
-				<h3>Investigación y diseño</h3>
-				<p>Se identificó el problema en el aula, se relevaron los requerimientos y se diseñó el primer modelo de datos de autores y obras.</p>
+				<h3>Etapa 1 · 2025 (2.º curso): investigación, viabilidad y prototipo inicial</h3>
+				<p class="periodo">Marzo a noviembre de 2025</p>
+				<p><strong>Qué hicimos:</strong> planteamos el problema (modernizar el acceso a la literatura y la historia paraguaya en la secundaria) e investigamos en fuentes oficiales los datos biográficos, fechas y obras de Augusto Roa Bastos, Josefina Plá, Delfina Acosta y Mauricio Cardozo Ocampo. También diseñamos la base de datos preliminar y armamos los primeros prototipos web y versiones de prueba de escritorio.</p>
+				<p><strong>Producto entregado:</strong> anteproyecto de investigación, diseño inicial de la estructura de datos y prototipo funcional básico.</p>
+				<p><strong>Evidencias:</strong> están en la <a href="#evidencia-2025"><u>Galería (evidencia de 2025)</u></a>.</p>
 			</li>
 			<li>
-				<h3>Desarrollo base y prototipo</h3>
-				<p>Se armó la arquitectura base, la conexión a la base de datos con JDBC y las primeras pruebas con marcadores.</p>
+				<h3>Etapa 2 · 2026 (3.er curso): implementación, realidad aumentada y cierre</h3>
+				<p class="periodo">Febrero a octubre de 2026</p>
+				<p><strong>Qué hicimos:</strong> programamos el servidor en Java 17 con el <code>HttpServer</code> del JDK y armamos la base de datos SQLite con su script inicial. Hicimos la interfaz como una página única con HTML5, CSS3 y JavaScript, con lectura de biografías en voz alta, y sumamos <code>&lt;model-viewer&gt;</code> para mostrar modelos 3D en realidad aumentada. Después hicimos pruebas de calidad y optimizamos la app para celulares.</p>
+				<p><strong>Producto entregado:</strong> sistema web Librarium operativo, manuales de usuario y de programación, y la defensa del proyecto.</p>
 			</li>
-			<li>
-				<h3>Integración, pruebas y publicación</h3>
-				<p>Se consolidó la experiencia con los marcadores, se mejoró la interfaz, se agregaron 14 pruebas automáticas, se completó la documentación y se publicó el sitio.</p>
-			</li>
+		</ol>
+	</section>
+
+	<section class="seccion seccion-clara" id="cronograma">
+		<div class="seccion-encabezado">
+			<p class="etiqueta-seccion">Cronograma</p>
+			<h2>Línea de <em>tiempo</em></h2>
+		</div>
+		<ol class="linea-tiempo">
+			<li><strong>Marzo 2025</strong><span>Definimos el tema, los objetivos y el alcance general del proyecto.</span></li>
+			<li><strong>Abril - Mayo 2025</strong><span>Recolectamos datos bibliográficos, redactamos el marco teórico preliminar y elegimos a los autores.</span></li>
+			<li><strong>Junio - Julio 2025</strong><span>Primeros bocetos de la interfaz web y estructura de la base de datos preliminar.</span></li>
+			<li><strong>Agosto - Noviembre 2025</strong><span>Versiones de prueba de escritorio, anteproyecto y presentación de los avances de 2.º curso.</span></li>
+			<li><strong>Febrero - Marzo 2026</strong><span>Retomamos el proyecto: servidor en Java 17 y diseño definitivo de la base SQLite.</span></li>
+			<li><strong>Abril - Mayo 2026</strong><span>Programamos la interfaz web e integramos la lectura de biografías por voz.</span></li>
+			<li><strong>Junio - Julio 2026</strong><span>Integramos la realidad aumentada con visores 3D y probamos el reconocimiento de fichas impresas.</span></li>
+			<li><strong>Agosto - Septiembre 2026</strong><span>Pruebas de calidad, corrección del diseño en celulares y documentación técnica.</span></li>
+			<li><strong>Octubre 2026</strong><span>Publicación en GitHub Pages, cierre del sitio web y defensa final.</span></li>
 		</ol>
 	</section>
 
@@ -87,21 +115,21 @@
 		<div class="grid-diagramas">
 			<div class="diagrama">
 				<h3>Diagrama de clases</h3>
-				<a href="imagenes/clases.png" target="_blank"><img src="imagenes/clases.png" alt="Diagrama de clases del backend en Java 17, organizado por paquetes: servidor, controlador, servicio, dao, conexion, modelo y util"></a>
-				<p class="pie-diagrama">Cada color es un paquete (ver la leyenda del diagrama). Hacé clic en la imagen para verla más grande.</p>
+				<a id="m-clases" href="#v-clases" title="Clic para ampliar"><img src="imagenes/clases.png" alt="Diagrama de clases del backend en Java 17, organizado por paquetes: servidor, controlador, servicio, dao, conexion, modelo y util"></a>
+				<p class="pie-diagrama">Cada color es un paquete (ver la leyenda del diagrama). Haz clic en la imagen para ampliarla o <a href="imagenes/clases.png" target="_blank"><u>ábrela en tamaño completo en otra pestaña</u></a>.</p>
 			</div>
 			<div class="diagrama">
 				<h3>Diagrama de casos de uso</h3>
-				<a href="imagenes/casos-de-uso.png" target="_blank"><img src="imagenes/casos-de-uso.png" alt="Diagrama de casos de uso: el estudiante ve la galería, la ficha y la escultura 3D y escanea fichas impresas; el desarrollador carga datos, genera modelos 3D y publica en GitHub Pages"></a>
+				<a id="m-casos-de-uso" href="#v-casos-de-uso" title="Clic para ampliar"><img src="imagenes/casos-de-uso.png" alt="Diagrama de casos de uso: el estudiante ve la galería, la ficha y la escultura 3D y escanea fichas impresas; el desarrollador carga datos, genera modelos 3D y publica en GitHub Pages"></a>
 				<p class="pie-diagrama">El estudiante ve la galería, la ficha y la escultura 3D, y escanea fichas impresas; el desarrollador carga los datos, genera los modelos 3D y publica el sitio.</p>
 			</div>
 		</div>
 
 		<h3 class="titulo-DER">DER (diagrama de datos)</h3>
-		<a href="imagenes/mer.png" target="_blank"><img class="imagen-der" src="imagenes/mer.png" alt="Modelo entidad-relación: autor se relaciona con obra (1 a N), multimedia (1 a N) y marcador (1 a 1)"></a>
+		<a id="m-mer" href="#v-mer" title="Clic para ampliar"><img class="imagen-der" src="imagenes/mer.png" alt="Modelo entidad-relación: autor se relaciona con obra (1 a N), multimedia (1 a N) y marcador (1 a 1)"></a>
 		<div class="tablas-DER" id="der">
 			<table>
-				<caption>autor</caption>
+				<caption>Tabla: autor</caption>
 				<tr><td class="clave-primaria">PK</td><td>id</td><td>texto</td></tr>
 				<tr><td></td><td>nombre</td><td>texto</td></tr>
 				<tr><td></td><td>fecha_nacimiento</td><td>texto</td></tr>
@@ -113,7 +141,7 @@
 				<tr><td></td><td>orden</td><td>numérico</td></tr>
 			</table>
 			<table>
-				<caption>obra</caption>
+				<caption>Tabla: obra</caption>
 				<tr><td class="clave-primaria">PK</td><td>id</td><td>numérico</td></tr>
 				<tr><td class="clave-primaria">FK</td><td>autor_id</td><td>texto</td></tr>
 				<tr><td></td><td>titulo</td><td>texto</td></tr>
@@ -123,7 +151,7 @@
 				<tr><td></td><td>orden</td><td>numérico</td></tr>
 			</table>
 			<table>
-				<caption>multimedia</caption>
+				<caption>Tabla: multimedia</caption>
 				<tr><td class="clave-primaria">PK</td><td>id</td><td>numérico</td></tr>
 				<tr><td class="clave-primaria">FK</td><td>autor_id</td><td>texto</td></tr>
 				<tr><td></td><td>tipo</td><td>imagen, audio o video</td></tr>
@@ -131,7 +159,7 @@
 				<tr><td></td><td>descripcion</td><td>texto</td></tr>
 			</table>
 			<table>
-				<caption>marcador</caption>
+				<caption>Tabla: marcador</caption>
 				<tr><td class="clave-primaria">PK</td><td>id</td><td>texto</td></tr>
 				<tr><td class="clave-primaria">FK</td><td>autor_id (único)</td><td>texto</td></tr>
 				<tr><td></td><td>imagen</td><td>texto</td></tr>
@@ -201,11 +229,11 @@
 					<span class="numero-item">5</span>
 					<div>
 						<h3>Preguntas frecuentes</h3>
-						<p><strong>La cámara no reconoce el marcador:</strong> usá buena iluminación, evitá reflejos sobre el papel, poné la ficha dentro del marco verde y mantenela quieta un momento. La app necesita ver el mismo autor en 3 cuadros seguidos.</p>
-						<p><strong>No se enciende la cámara:</strong> revisá que le diste permiso al navegador y que no la esté usando otra aplicación (por ejemplo Zoom o Meet). En el celular, la página debe abrirse con https.</p>
-						<p><strong>El celular no abre la página:</strong> comprobá que esté en la misma red Wi-Fi que la computadora y que uses la dirección https que muestra la consola.</p>
-						<p><strong>Aparece un aviso de seguridad en el celular:</strong> es normal la primera vez. Tocá Avanzado y luego Continuar.</p>
-						<p><strong>Dice que el puerto está ocupado:</strong> probablemente Librarium ya está abierto. Cerrá la otra ventana y volvé a iniciarlo.</p>
+						<p><strong>La cámara no reconoce el marcador:</strong> usa buena iluminación, evita reflejos sobre el papel, pon la ficha dentro del marco verde y mantenla quieta un momento. La app necesita ver el mismo autor en 3 cuadros seguidos.</p>
+						<p><strong>No se enciende la cámara:</strong> revisa que le diste permiso al navegador y que no la esté usando otra aplicación (por ejemplo Zoom o Meet). En el celular, la página debe abrirse con https.</p>
+						<p><strong>El celular no abre la página:</strong> comprueba que esté en la misma red Wi-Fi que la computadora y que uses la dirección https que muestra la consola.</p>
+						<p><strong>Aparece un aviso de seguridad en el celular:</strong> es normal la primera vez. Toca Avanzado y luego Continuar.</p>
+						<p><strong>Dice que el puerto está ocupado:</strong> probablemente Librarium ya está abierto. Cierra la otra ventana y vuelve a iniciarlo.</p>
 						<p><strong>Mostré una foto que no es de ningún autor:</strong> no pasa nada. La barra no se llena y no se abre ninguna ficha.</p>
 					</div>
 				</div>
@@ -277,7 +305,7 @@
 							<li>Servidor con <code>HttpServer</code>, que ya viene en Java: no se usa ningún framework.</li>
 							<li>Reconocimiento de imágenes sin inteligencia artificial ni librerías de visión: cada imagen se reduce a una «firma» de números (gris, bordes y color) y se compara con las fotos de los autores. Se acepta si el puntaje llega a 0,50 y supera en 0,08 al segundo autor.</li>
 							<li>Seguridad: <code>PreparedStatement</code> contra inyección SQL, escape de textos contra XSS y bloqueo de rutas con <code>..</code>.</li>
-							<li>Interfaz: una sola página con varias pantallas, diseño responsive con CSS Grid y JavaScript dividido en módulos.</li>
+							<li>Interfaz: una sola página con varias pantallas, diseño responsive con CSS Grid y JavaScript dividido en módulos. La escultura 3D y la realidad aumentada usan el componente <code>&lt;model-viewer&gt;</code>.</li>
 							<li>HTTPS con certificado propio, porque los navegadores solo permiten la cámara en páginas seguras.</li>
 							<li>Publicación en GitHub Pages sin servidor Java; la página detecta sola en qué modo está.</li>
 						</ul>
@@ -302,92 +330,117 @@
 		<h3 class="titulo-grupo">Versión web en la computadora</h3>
 		<div class="galeria">
 			<figure>
-				<a href="imagenes/web-pc-bienvenida.jpg" target="_blank"><img src="imagenes/web-pc-bienvenida.jpg" alt="Pantalla de bienvenida de Librarium con los retratos de los cuatro autores y el botón Comenzar"></a>
+				<a id="m-web-pc-bienvenida" href="#v-web-pc-bienvenida" title="Clic para ampliar"><img src="imagenes/web-pc-bienvenida.jpg" alt="Pantalla de bienvenida de Librarium con los retratos de los cuatro autores y el botón Comenzar"></a>
 				<figcaption>Pantalla de bienvenida</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/web-pc-menu-qr.jpg" target="_blank"><img src="imagenes/web-pc-menu-qr.jpg" alt="Menú principal con las opciones Galería Digital y Realidad Aumentada y el código QR para abrir la app en el celular"></a>
+				<a id="m-web-pc-menu-qr" href="#v-web-pc-menu-qr" title="Clic para ampliar"><img src="imagenes/web-pc-menu-qr.jpg" alt="Menú principal con las opciones Galería Digital y Realidad Aumentada y el código QR para abrir la app en el celular"></a>
 				<figcaption>Menú principal y código QR para el celular</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/web-pc-galeria.jpg" target="_blank"><img src="imagenes/web-pc-galeria.jpg" alt="Galería digital con las tarjetas de los cuatro autores y el botón Ver Información"></a>
+				<a id="m-web-pc-galeria" href="#v-web-pc-galeria" title="Clic para ampliar"><img src="imagenes/web-pc-galeria.jpg" alt="Galería digital con las tarjetas de los cuatro autores y el botón Ver Información"></a>
 				<figcaption>Galería digital de autores</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/web-pc-camara.jpg" target="_blank"><img src="imagenes/web-pc-camara.jpg" alt="Pantalla de la cámara con el marco verde y la línea de escaneo"></a>
+				<a id="m-web-pc-camara" href="#v-web-pc-camara" title="Clic para ampliar"><img src="imagenes/web-pc-camara.jpg" alt="Pantalla de la cámara con el marco verde y la línea de escaneo"></a>
 				<figcaption>Cámara con marco verde para escanear la ficha</figcaption>
 			</figure>
 		</div>
 		<h3 class="titulo-grupo">Versión web en el celular</h3>
 		<div class="galeria">
 			<figure>
-				<a href="imagenes/web-cel-bienvenida.jpg" target="_blank"><img src="imagenes/web-cel-bienvenida.jpg" alt="Pantalla de bienvenida de Librarium en el celular"></a>
+				<a id="m-web-cel-bienvenida" href="#v-web-cel-bienvenida" title="Clic para ampliar"><img src="imagenes/web-cel-bienvenida.jpg" alt="Pantalla de bienvenida de Librarium en el celular"></a>
 				<figcaption>Pantalla de bienvenida en el celular</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/web-cel-menu.jpg" target="_blank"><img src="imagenes/web-cel-menu.jpg" alt="Menú principal en el celular con las opciones Realidad Aumentada y Galería Digital"></a>
+				<a id="m-web-cel-menu" href="#v-web-cel-menu" title="Clic para ampliar"><img src="imagenes/web-cel-menu.jpg" alt="Menú principal en el celular con las opciones Realidad Aumentada y Galería Digital"></a>
 				<figcaption>Menú principal en el celular</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/web-cel-galeria.jpg" target="_blank"><img src="imagenes/web-cel-galeria.jpg" alt="Galería digital en el celular con las tarjetas de los cuatro autores"></a>
+				<a id="m-web-cel-galeria" href="#v-web-cel-galeria" title="Clic para ampliar"><img src="imagenes/web-cel-galeria.jpg" alt="Galería digital en el celular con las tarjetas de los cuatro autores"></a>
 				<figcaption>Galería digital en el celular (modo oscuro)</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/web-cel-marcador-reconocido.jpg" target="_blank"><img src="imagenes/web-cel-marcador-reconocido.jpg" alt="Ficha de Josefina Plá abierta después de reconocer su marcador"></a>
+				<a id="m-web-cel-marcador-reconocido" href="#v-web-cel-marcador-reconocido" title="Clic para ampliar"><img src="imagenes/web-cel-marcador-reconocido.jpg" alt="Ficha de Josefina Plá abierta después de reconocer su marcador"></a>
 				<figcaption>Marcador reconocido: se abre la ficha de Josefina Plá</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/web-cel-biografia-obras.jpg" target="_blank"><img src="imagenes/web-cel-biografia-obras.jpg" alt="Biografía y obras principales de Josefina Plá con el botón Escuchar biografía"></a>
+				<a id="m-web-cel-biografia-obras" href="#v-web-cel-biografia-obras" title="Clic para ampliar"><img src="imagenes/web-cel-biografia-obras.jpg" alt="Biografía y obras principales de Josefina Plá con el botón Escuchar biografía"></a>
 				<figcaption>Biografía y obras principales, con el botón «Escuchar biografía»</figcaption>
 			</figure>
 		</div>
 		<h3 class="titulo-grupo">Realidad aumentada con escultura 3D</h3>
 		<div class="galeria">
 			<figure>
-				<a href="imagenes/ra-elegir-autor-oscuro.jpg" target="_blank"><img src="imagenes/ra-elegir-autor-oscuro.jpg" alt="Pantalla de Realidad Aumentada con la escultura 3D de Roa Bastos y el botón Ver en tu espacio"></a>
+				<a id="m-ra-elegir-autor-oscuro" href="#v-ra-elegir-autor-oscuro" title="Clic para ampliar"><img src="imagenes/ra-elegir-autor-oscuro.jpg" alt="Pantalla de Realidad Aumentada con la escultura 3D de Roa Bastos y el botón Ver en tu espacio"></a>
 				<figcaption>Elegir un autor y tocar «Ver en tu espacio» (modo oscuro)</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/ra-elegir-autor-claro.jpg" target="_blank"><img src="imagenes/ra-elegir-autor-claro.jpg" alt="Pantalla de Realidad Aumentada en modo claro con los botones Escanear ficha impresa y Volver al Menú"></a>
+				<a id="m-ra-elegir-autor-claro" href="#v-ra-elegir-autor-claro" title="Clic para ampliar"><img src="imagenes/ra-elegir-autor-claro.jpg" alt="Pantalla de Realidad Aumentada en modo claro con los botones Escanear ficha impresa y Volver al Menú"></a>
 				<figcaption>Lo mismo en modo claro, con «Escanear ficha impresa» y «Volver al Menú»</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/ra-escultura-sala.jpg" target="_blank"><img src="imagenes/ra-escultura-sala.jpg" alt="Escultura 3D de Augusto Roa Bastos con dos paneles de biografía y obras, colocada en una sala real"></a>
+				<a id="m-ra-escultura-sala" href="#v-ra-escultura-sala" title="Clic para ampliar"><img src="imagenes/ra-escultura-sala.jpg" alt="Escultura 3D de Augusto Roa Bastos con dos paneles de biografía y obras, colocada en una sala real"></a>
 				<figcaption>La escultura de Roa Bastos con sus dos paneles, en una sala real</figcaption>
 			</figure>
 		</div>
-		<h3 class="titulo-grupo">Versiones anteriores del proyecto</h3>
+		<h3 class="titulo-grupo" id="evidencia-2025">Versiones anteriores del proyecto (evidencia de 2025)</h3>
 		<div class="galeria">
 			<figure>
-				<a href="imagenes/anterior-prototipo-web.jpg" target="_blank"><img src="imagenes/anterior-prototipo-web.jpg" alt="Prototipo web anterior con tarjetas de autores todavía sin fotos"></a>
-				<figcaption>Prototipo web anterior: tarjetas de autores sin fotos todavía</figcaption>
+				<a id="m-anterior-prototipo-web" href="#v-anterior-prototipo-web" title="Clic para ampliar"><img src="imagenes/anterior-prototipo-web.jpg" alt="Prototipo web anterior con tarjetas de autores todavía sin fotos"></a>
+				<figcaption>Prototipo web inicial · Octubre 2025: tarjetas de autores sin fotos todavía</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/anterior-swing-galeria.jpg" target="_blank"><img src="imagenes/anterior-swing-galeria.jpg" alt="Versión anterior en Java Swing con la galería de autores y el botón Activar Camara RA"></a>
-				<figcaption>Versión anterior en Java Swing: galería y «Activar Camara RA»</figcaption>
+				<a id="m-anterior-swing-galeria" href="#v-anterior-swing-galeria" title="Clic para ampliar"><img src="imagenes/anterior-swing-galeria.jpg" alt="Versión anterior en Java Swing con la galería de autores y el botón Activar Camara RA"></a>
+				<figcaption>Versión Swing · Septiembre 2025: galería y «Activar Camara RA»</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/anterior-swing-biografia.jpg" target="_blank"><img src="imagenes/anterior-swing-biografia.jpg" alt="Versión anterior en Java Swing con la biografía de Augusto Roa Bastos"></a>
-				<figcaption>Versión anterior en Java Swing: biografía de Roa Bastos</figcaption>
+				<a id="m-anterior-swing-biografia" href="#v-anterior-swing-biografia" title="Clic para ampliar"><img src="imagenes/anterior-swing-biografia.jpg" alt="Versión anterior en Java Swing con la biografía de Augusto Roa Bastos"></a>
+				<figcaption>Versión Swing · Septiembre 2025: biografía de Roa Bastos</figcaption>
 			</figure>
 		</div>
-		<h3 class="titulo-grupo">Código de la versión anterior</h3>
+		<h3 class="titulo-grupo">Código de la versión anterior (2025)</h3>
 		<div class="galeria">
 			<figure>
-				<a href="imagenes/codigo-schema-sql.jpg" target="_blank"><img src="imagenes/codigo-schema-sql.jpg" alt="Archivo schema.sql con las tablas autor y obra de la versión anterior"></a>
-				<figcaption>schema.sql de la versión anterior: tablas autor y obra</figcaption>
+				<a id="m-codigo-schema-sql" href="#v-codigo-schema-sql" title="Clic para ampliar"><img src="imagenes/codigo-schema-sql.jpg" alt="Archivo schema.sql con las tablas autor y obra de la versión anterior"></a>
+				<figcaption>Código · Julio 2025: schema.sql con las tablas autor y obra</figcaption>
 			</figure>
 			<figure>
-				<a href="imagenes/codigo-databasemanager.jpg" target="_blank"><img src="imagenes/codigo-databasemanager.jpg" alt="Clase DatabaseManager en Java junto a la ficha de Roa Bastos de la versión Swing"></a>
-				<figcaption>Clase DatabaseManager (Java) y la ficha de la versión Swing</figcaption>
+				<a id="m-codigo-databasemanager" href="#v-codigo-databasemanager" title="Clic para ampliar"><img src="imagenes/codigo-databasemanager.jpg" alt="Clase DatabaseManager en Java junto a la ficha de Roa Bastos de la versión Swing"></a>
+				<figcaption>Código · Octubre 2025: clase DatabaseManager (Java) y la ficha de la versión Swing</figcaption>
 			</figure>
 		</div>
 		<h3 class="titulo-grupo">En el aula</h3>
 		<div class="galeria">
 			<figure>
-				<a href="imagenes/equipo-trabajando.jpg" target="_blank"><img src="imagenes/equipo-trabajando.jpg" alt="Dos estudiantes trabajando con una notebook en el aula"></a>
+				<a id="m-equipo-trabajando" href="#v-equipo-trabajando" title="Clic para ampliar"><img src="imagenes/equipo-trabajando.jpg" alt="Dos estudiantes trabajando con una notebook en el aula"></a>
 				<figcaption>Trabajando en el proyecto en el aula</figcaption>
 			</figure>
+		</div>
+	</section>
+
+	<section class="seccion seccion-clara" id="estado-final">
+		<div class="seccion-encabezado">
+			<p class="etiqueta-seccion">Estado final</p>
+			<h2>Qué quedó y qué <em>falta</em></h2>
+		</div>
+		<div class="contenido-seccion">
+			<h3>Qué quedó terminado</h3>
+			<ul class="lista-detalle">
+				<li>La plataforma web interactiva y responsiva de Librarium, accesible de forma remota y local.</li>
+				<li>La base de datos SQLite con la información completa y verificada de los autores elegidos.</li>
+				<li>El servidor en Java 17, sin frameworks pesados.</li>
+				<li>La visualización de modelos 3D y la realidad aumentada con estándares web abiertos (<code>&lt;model-viewer&gt;</code>).</li>
+				<li>La documentación completa: manuales de usuario y de programación, y registros de pruebas.</li>
+			</ul>
+			<h3>Pendiente o mejora futura</h3>
+			<ul class="lista-detalle">
+				<li>Ampliar el catálogo con más escritores, poetas y músicos de distintas corrientes de la literatura paraguaya.</li>
+				<li>Agregar módulos de evaluación y trivias, vinculados al escaneo de fichas.</li>
+			</ul>
+			<h3>Reflexión final del equipo</h3>
+			<p><strong>Qué aprendimos:</strong> a coordinar el trabajo con metodologías ordenadas, a resolver problemas técnicos de servidores y bases de datos sin depender de herramientas externas, y a valorar la tecnología como un puente para rescatar y difundir nuestra literatura e historia. El compromiso compartido fue la clave para superar cada obstáculo.</p>
+			<p><strong>Qué haríamos diferente:</strong> organizaríamos con más anticipación la digitalización, el diseño y el modelado 3D de los recursos gráficos para ganar tiempo de pruebas, y haríamos pruebas de usabilidad con más estudiantes desde las primeras fases.</p>
 		</div>
 	</section>
 
@@ -400,17 +453,108 @@
 			<p><strong>Institución:</strong> Centro Educativo Departamental «Miguela Rodríguez Araujo», Luque, Paraguay</p>
 			<p><strong>Curso y año:</strong> 3º BATIN · 2026</p>
 			<ul class="integrantes">
-				<li>Pabla Nayeli Giménez Martínez.</li>
-				<li>Araceli Paulina Sotelo Ybarra. </li>
-				<li>Juliana Benítez Medina.</li>
-			</ul>
+					<li><strong>Juliana Benítez Medina</strong><br>Coordinación general y frontend</li>
+					<li><strong>Araceli Paulina Sotelo Ibarra</strong><br>Programación backend y base de datos</li>
+					<li><strong>Pabla Nayeli Giménez Martínez</strong><br>Gestión de contenidos, investigación y realidad aumentada</li>
+				</ul>
+				<p><strong>Docente tutora:</strong> Prof. PhD Daniela Ferreira</p>
 		</div>
 	</section>
 
 	<footer>
-		<p>&copy; 2026 Librarium</p>
-		<p>Proyecto de Promoción · 3º BATIN</p>
+		<img class="logo-institucion" src="imagenes/logo-institucion.png" alt="Logo del Centro Educativo Departamental Miguela Rodríguez Araujo">
+		<div>
+			<p>&copy; 2026 Librarium · Proyecto de Promoción · 3º BATIN</p>
+			<p>Centro Educativo Departamental «Miguela Rodríguez Araujo»</p>
+			<p>Docente tutora: Prof. PhD Daniela Ferreira</p>
+			<p><a href="https://github.com/cedmr-pytos-promo/026-librarium" target="_blank">Repositorio del proyecto en GitHub</a></p>
+		</div>
 	</footer>
+
+	<div class="visor visor-grande" id="v-clases">
+		<a class="cerrar" href="#m-clases">&#10005; Cerrar</a>
+		<img src="imagenes/clases.png" alt="Diagrama de clases del backend en Java 17, organizado por paquetes: servidor, controlador, servicio, dao, conexion, modelo y util">
+	</div>
+	<div class="visor visor-grande" id="v-casos-de-uso">
+		<a class="cerrar" href="#m-casos-de-uso">&#10005; Cerrar</a>
+		<img src="imagenes/casos-de-uso.png" alt="Diagrama de casos de uso: el estudiante ve la galería, la ficha y la escultura 3D y escanea fichas impresas; el desarrollador carga datos, genera modelos 3D y publica en GitHub Pages">
+	</div>
+	<div class="visor visor-grande" id="v-mer">
+		<a class="cerrar" href="#m-mer">&#10005; Cerrar</a>
+		<img src="imagenes/mer.png" alt="Modelo entidad-relación: autor se relaciona con obra (1 a N), multimedia (1 a N) y marcador (1 a 1)">
+	</div>
+	<div class="visor" id="v-web-pc-bienvenida">
+		<a class="cerrar" href="#m-web-pc-bienvenida">&#10005; Cerrar</a>
+		<img src="imagenes/web-pc-bienvenida.jpg" alt="Pantalla de bienvenida de Librarium con los retratos de los cuatro autores y el botón Comenzar">
+	</div>
+	<div class="visor" id="v-web-pc-menu-qr">
+		<a class="cerrar" href="#m-web-pc-menu-qr">&#10005; Cerrar</a>
+		<img src="imagenes/web-pc-menu-qr.jpg" alt="Menú principal con las opciones Galería Digital y Realidad Aumentada y el código QR para abrir la app en el celular">
+	</div>
+	<div class="visor" id="v-web-pc-galeria">
+		<a class="cerrar" href="#m-web-pc-galeria">&#10005; Cerrar</a>
+		<img src="imagenes/web-pc-galeria.jpg" alt="Galería digital con las tarjetas de los cuatro autores y el botón Ver Información">
+	</div>
+	<div class="visor" id="v-web-pc-camara">
+		<a class="cerrar" href="#m-web-pc-camara">&#10005; Cerrar</a>
+		<img src="imagenes/web-pc-camara.jpg" alt="Pantalla de la cámara con el marco verde y la línea de escaneo">
+	</div>
+	<div class="visor" id="v-web-cel-bienvenida">
+		<a class="cerrar" href="#m-web-cel-bienvenida">&#10005; Cerrar</a>
+		<img src="imagenes/web-cel-bienvenida.jpg" alt="Pantalla de bienvenida de Librarium en el celular">
+	</div>
+	<div class="visor" id="v-web-cel-menu">
+		<a class="cerrar" href="#m-web-cel-menu">&#10005; Cerrar</a>
+		<img src="imagenes/web-cel-menu.jpg" alt="Menú principal en el celular con las opciones Realidad Aumentada y Galería Digital">
+	</div>
+	<div class="visor" id="v-web-cel-galeria">
+		<a class="cerrar" href="#m-web-cel-galeria">&#10005; Cerrar</a>
+		<img src="imagenes/web-cel-galeria.jpg" alt="Galería digital en el celular con las tarjetas de los cuatro autores">
+	</div>
+	<div class="visor" id="v-web-cel-marcador-reconocido">
+		<a class="cerrar" href="#m-web-cel-marcador-reconocido">&#10005; Cerrar</a>
+		<img src="imagenes/web-cel-marcador-reconocido.jpg" alt="Ficha de Josefina Plá abierta después de reconocer su marcador">
+	</div>
+	<div class="visor" id="v-web-cel-biografia-obras">
+		<a class="cerrar" href="#m-web-cel-biografia-obras">&#10005; Cerrar</a>
+		<img src="imagenes/web-cel-biografia-obras.jpg" alt="Biografía y obras principales de Josefina Plá con el botón Escuchar biografía">
+	</div>
+	<div class="visor" id="v-ra-elegir-autor-oscuro">
+		<a class="cerrar" href="#m-ra-elegir-autor-oscuro">&#10005; Cerrar</a>
+		<img src="imagenes/ra-elegir-autor-oscuro.jpg" alt="Pantalla de Realidad Aumentada con la escultura 3D de Roa Bastos y el botón Ver en tu espacio">
+	</div>
+	<div class="visor" id="v-ra-elegir-autor-claro">
+		<a class="cerrar" href="#m-ra-elegir-autor-claro">&#10005; Cerrar</a>
+		<img src="imagenes/ra-elegir-autor-claro.jpg" alt="Pantalla de Realidad Aumentada en modo claro con los botones Escanear ficha impresa y Volver al Menú">
+	</div>
+	<div class="visor" id="v-ra-escultura-sala">
+		<a class="cerrar" href="#m-ra-escultura-sala">&#10005; Cerrar</a>
+		<img src="imagenes/ra-escultura-sala.jpg" alt="Escultura 3D de Augusto Roa Bastos con dos paneles de biografía y obras, colocada en una sala real">
+	</div>
+	<div class="visor" id="v-anterior-prototipo-web">
+		<a class="cerrar" href="#m-anterior-prototipo-web">&#10005; Cerrar</a>
+		<img src="imagenes/anterior-prototipo-web.jpg" alt="Prototipo web anterior con tarjetas de autores todavía sin fotos">
+	</div>
+	<div class="visor" id="v-anterior-swing-galeria">
+		<a class="cerrar" href="#m-anterior-swing-galeria">&#10005; Cerrar</a>
+		<img src="imagenes/anterior-swing-galeria.jpg" alt="Versión anterior en Java Swing con la galería de autores y el botón Activar Camara RA">
+	</div>
+	<div class="visor" id="v-anterior-swing-biografia">
+		<a class="cerrar" href="#m-anterior-swing-biografia">&#10005; Cerrar</a>
+		<img src="imagenes/anterior-swing-biografia.jpg" alt="Versión anterior en Java Swing con la biografía de Augusto Roa Bastos">
+	</div>
+	<div class="visor" id="v-codigo-schema-sql">
+		<a class="cerrar" href="#m-codigo-schema-sql">&#10005; Cerrar</a>
+		<img src="imagenes/codigo-schema-sql.jpg" alt="Archivo schema.sql con las tablas autor y obra de la versión anterior">
+	</div>
+	<div class="visor" id="v-codigo-databasemanager">
+		<a class="cerrar" href="#m-codigo-databasemanager">&#10005; Cerrar</a>
+		<img src="imagenes/codigo-databasemanager.jpg" alt="Clase DatabaseManager en Java junto a la ficha de Roa Bastos de la versión Swing">
+	</div>
+	<div class="visor" id="v-equipo-trabajando">
+		<a class="cerrar" href="#m-equipo-trabajando">&#10005; Cerrar</a>
+		<img src="imagenes/equipo-trabajando.jpg" alt="Dos estudiantes trabajando con una notebook en el aula">
+	</div>
 
 </body>
 </html>

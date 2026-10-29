@@ -69,6 +69,23 @@ header{
     color: #ffffff;
 }
 
+/* Menu desplegable (solo CSS): el checkbox esta oculto y la etiqueta ☰ lo marca */
+.menu-check, .boton-menu{
+    display: none;
+}
+.boton-menu{
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 1;
+}
+.enlaces{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+}
+
 /*DESCRIPCION---------------------------------------------------------------------------------------------------------------------------------------------*/
 #inicio{
     display: flex;
@@ -180,6 +197,48 @@ header{
     margin-top: 5px;
 }
 
+.periodo{
+    color: #f07357;
+    font-weight: 700;
+    margin: 4px 0 8px;
+}
+.pasos-del-proceso li p + p{
+    margin-top: 8px;
+}
+.pasos-del-proceso a{
+    color: #e8f3e6;
+}
+.intro-proceso{
+    margin-top: 15px;
+}
+/* Linea de tiempo */
+.linea-tiempo{
+    list-style-type: none;
+    border-left: 3px solid #f07357;
+    padding-left: 25px;
+}
+.linea-tiempo li{
+    position: relative;
+    padding-bottom: 22px;
+}
+.linea-tiempo li::before{
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #f07357;
+    border: 3px solid #e8f3e6;
+}
+.linea-tiempo strong, .linea-tiempo span{
+    display: block;
+}
+.linea-tiempo span{
+    color: #4b5d56;
+}
+
 /*DIAGRAMAS Y DER---------------------------------------------------------------------------------------------------------------------------------------------*/
 /* Los diagramas ahora son imagenes grandes: uno debajo del otro para que se puedan leer */
 .grid-diagramas{
@@ -234,7 +293,9 @@ header{
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.3em;
     text-align: left;
-    padding-bottom: 6px;
+    padding: 6px 10px;
+    background-color: #17221f;
+    color: #e8f3e6;
 }
 .tablas-DER td{
     border: 1px solid rgba(23,34,31,0.18);
@@ -315,6 +376,46 @@ header{
     height: auto;
     border: 2px solid rgba(232,243,230,0.4);
 }
+.galeria a, .diagrama a, #diagramas > a{
+    cursor: zoom-in;
+}
+/* Imagen ampliada: se muestra cuando la direccion termina en #v-nombre (:target) */
+.visor{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.92);
+    z-index: 50;
+    overflow: auto;
+    padding: 55px 15px 15px;
+    text-align: center;
+}
+.visor:target{
+    display: block;
+}
+.visor img{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+.visor-grande img{
+    max-width: none;
+    max-height: none;
+    width: 1280px;
+}
+.cerrar{
+    position: fixed;
+    top: 12px;
+    right: 15px;
+    background-color: #f07357;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
 .galeria figcaption{
     font-size: 0.85em;
     color: #e8e0d2;
@@ -328,6 +429,9 @@ header{
     border-top: 1px solid rgba(23,34,31,0.3);
     padding: 10px 0;
 }
+.equipo-datos > p{
+    margin-top: 12px;
+}
 
 /*FOOTER---------------------------------------------------------------------------------------------------------------------------------------------*/
 footer{
@@ -335,12 +439,42 @@ footer{
     color: #e8f3e6;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
     padding: 25px 5%;
     font-size: 0.8em;
+}
+footer a{
+    color: #f07357;
+}
+.logo-institucion{
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 /*RESPONSIVE---------------------------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 900px){
+    .navegadores{
+        justify-content: space-between;
+    }
+    .boton-menu{
+        display: block;
+    }
+    .enlaces{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+    .menu-check:checked ~ .enlaces{
+        display: flex;
+    }
+    .enlaces-de-navegacion{
+        padding: 10px;
+        font-size: 1em;
+    }
     .seccion, .grid-diagramas, .tablas-DER{
         grid-template-columns: 1fr;
     }
@@ -364,6 +498,6 @@ footer{
     }
     footer{
         flex-direction: column;
-        gap: 5px;
+        text-align: center;
     }
 }
